@@ -1,8 +1,5 @@
 import { TextField } from "@mui/material";
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import FooterInitial from "../../components/FooterInitial";
-import { FooterContainer } from "../../components/FooterInitial/style";
 import { Title, Container } from "../../styles/GlobalStyle";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
@@ -32,57 +29,67 @@ const Register = () => {
   return (
     <div>
       <Container>
-        <Title>Cadastrar</Title>
-        <form
-          className="login-form"
-          action=""
-          onSubmit={handleSubmit(handleForm)}
-        >
-          <TextField
-            label="Nome"
-            type="text"
-            autoComplete=""
-            variant="standard"
-            {...register("name")}
-            error={!!errors.name}
-            helperText={errors.name?.message}
-          />
-          <TextField
-            label="E-mail"
-            type="text"
-            autoComplete=""
-            variant="standard"
-            {...register("email")}
-            error={!!errors.email}
-            helperText={errors.email?.message}
-          />
-          <TextField
-            label="Senha"
-            type="password"
-            autoComplete="current-password"
-            variant="standard"
-            {...register("password")}
-            error={!!errors.password}
-            helperText={errors.password?.message}
-          />
-          <TextField
-            label="Repetir Senha"
-            type="password"
-            autoComplete="current-password"
-            variant="standard"
-            {...register("passwordConfirm")}
-            error={!!errors.passwordConfirm}
-            helperText={errors.passwordConfirm?.message}
-          />
-          <button type="submit" class="btn btn-primary">
-            Cadastrar
-          </button>
-          <button type="button" class="btn btn-light">
-            Cadastrar com o Google
-          </button>
+        <div className="login-page">
+          <span className="mini-bar"></span>
+          <Title>Cadastrar</Title>
+          <form
+            className="login-form"
+            action=""
+            onSubmit={handleSubmit(handleForm)}
+          >
+            <TextField
+              label="Nome"
+              type="text"
+              autoComplete=""
+              variant="standard"
+              {...register("name")}
+              error={!!errors.name}
+              fullWidth
+              helperText={errors.name?.message}
+            />
+            <TextField
+              label="E-mail"
+              type="text"
+              autoComplete=""
+              variant="standard"
+              {...register("email")}
+              error={!!errors.email}
+              fullWidth
+              helperText={errors.email?.message}
+            />
+            <TextField
+              label="Senha"
+              type="password"
+              autoComplete="current-password"
+              variant="standard"
+              {...register("password")}
+              error={!!errors.password}
+              helperText={errors.password?.message}
+              fullWidth
+            />
+            <TextField
+              fullWidth
+              label="Repetir Senha"
+              type="password"
+              autoComplete="current-password"
+              variant="standard"
+              {...register("passwordConfirm")}
+              error={!!errors.passwordConfirm}
+              helperText={errors.passwordConfirm?.message}
+            />
+            <button type="submit" class="btn btn-primary">
+              Cadastrar
+            </button>
+            <button type="button" class="btn btn-light">
+              Cadastrar com o Google
+            </button>
 
-          <Link to="/login">Já tenho conta</Link>
-        </form>
+            <Link className="link-login-register" to="/login">
+              Já tenho conta
+            </Link>
+          </form>
+          <span className="footer-bar"></span>
+        </div>
       </Container>
     </div>
   );

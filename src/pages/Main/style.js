@@ -7,6 +7,13 @@ export const MainContainer = styled.main`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 5px;
+  .task-title {
+    color: var(--color-primary);
+    font-size: 1em;
+    padding: 5px;
+    text-transform: uppercase;
+  }
 `;
 
 export const ToDoContainer = styled.section`
@@ -21,6 +28,8 @@ export const ToDoContainer = styled.section`
     align-items: center;
     gap: 10px;
     overflow: auto;
+    padding: 10px;
+    border-radius: 25px;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -41,6 +50,8 @@ export const ProgressContainer = styled.section`
     gap: 15px;
     overflow: auto;
     padding: 20px;
+    /* padding: 10px; */
+    border-radius: 25px;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -62,6 +73,8 @@ export const CompletedContainer = styled.section`
     overflow: auto;
     gap: 15px;
     padding: 15px;
+    /* padding: 10px; */
+    border-radius: 25px;
     &::-webkit-scrollbar {
       display: none;
     }
